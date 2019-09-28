@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "83d44f7d-24a3-4486-b405-04f99c643094",
+		"name": "Curl Onsite Assignment APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " localhost:5000/insurance-purchase",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customerName\": \"Akhil\",\n\t\"insurerName\":\"LIC\",\n\t\"productName\":\"Laptop2\",\n\t\"productCost\":\"50000\",\n\t\"issueDate\":\"1-2-2019\",\n\t\"endDate\":\"1-2-2020\",\n\t\"premiumAmount\":\"500\",\n\t\"coveredCost\":\"30000\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/insurance-purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"insurance-purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/insurance-purchase",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/insurance-purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"insurance-purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/claim-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"insurancePurchaseId\": \"insurancePurchaseId_1\",\n\t\"claimDate\":\"2-1-2019\",\n\t\"claimDetails\":\"Laptop Stolen\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/claim-request",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"claim-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/claim-request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/claim-request",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"claim-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/verification-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"claimRequestId\": \"claimRequestId_1\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/verification-request",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"verification-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/verification-request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/verification-request",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"verification-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/claim-validation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verificationRequestId\": \"verificationRequestId_2\",\n\t\"firNumber\": \"fir1\",\n\t\"claimStatus\": \"Bogus\",\n\t\"additionalComments\": \"\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/claim-validation",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"claim-validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/claim-validation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/claim-validation",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"claim-validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/claim-settlement",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"claimValidationId\": \"claimValidationId_1\",\n\t\"settlementResult\": \"Success\",\n\t\"additionalComments\": \"\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/claim-settlement",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"claim-settlement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/claim-settlement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/claim-settlement",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"claim-settlement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " localhost:5000/block-explorer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/block-explorer",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"block-explorer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blockchain Save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emailId\":\"admin\",\n\t\"password\":\"password\",\n\t\"key\":\"test\",\n\t\"value\":\"testval1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blockchain Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/search/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
